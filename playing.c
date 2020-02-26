@@ -52,7 +52,7 @@ void move_car(uint8_t y) {
 	// Inside bounds
 	if (car_coordinates <= car_height/2 + 1)
 		car_coordinates = car_heights/2 + 1;
-	else if (car_coordinates >= 31 - carr_heights/2)
+	else if (car_coordinates >= 31 - car_heights/2)
 		player_coordinates = 31 - player_heights/2;
 
 }
