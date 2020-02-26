@@ -6,9 +6,8 @@
 void startScreen(void){
     while(BUTTON1)
     {
-
+        
     }
-    r = 0;
     while(!BUTTON1){
         display_string_clear();
         delay(10);
@@ -16,6 +15,7 @@ void startScreen(void){
         display_update();
 
     }
+    
 
 }
 /*

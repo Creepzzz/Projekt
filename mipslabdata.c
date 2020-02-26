@@ -141,14 +141,12 @@ const uint8_t const font[] = {
 	0, 120, 68, 66, 68, 120, 0, 0,
 };
 
-    uint8_t obstacle1[] = {
+    const uint8_t const obstacle[] = {
     255, 255, 255, 255, 255, 255, 255, 255,
     };
 
-    uint8_t obstacle2[] = {
-    255, 255, 255, 255, 255, 255, 255, 255,
-    };
-    uint8_t Car[] = {
+    
+    const uint8_t const Car[] = {
     255, 129, 129, 129, 129, 129, 129, 255,
     };
     uint8_t  icon[] = {

@@ -26,19 +26,11 @@ void quicksleep(int cyc);
 extern const uint8_t const font[128*8];
 extern const uint8_t const car[8];
 const uint8_t const obstacle[8];
-extern char textbuffer[4][16];
+extern char textbuffer[4][128];
 // Clear whole screen
 void screen_clear(void);
-
-// Game variables
-int running;
-int gameOver;
-int renderCount;
-int r;
-int score;
-int currentHighscore;
 
  // Game functions
 void initGame();
 void tick();
-*/
+

@@ -2,12 +2,12 @@
 uint8_t car_coordinates = 16;
 
 // Clearing the buffer of all pixels
-void gamebuffer_clear(void) {
+void textbuffer_clear(void) {
 
 	for(int j; j = 0; j < 4; j++) {
 
-		for(int i; i = 0; i < 96; i++) {
-			gamebuffer[j][i] = 0;
+		for(int i; i = 0; i < 127; i++) {
+			textbuffer[j][i] = 0;
 
 		}
 
@@ -18,10 +18,10 @@ void koordinate_update(void) {
 	for(int j; j = 0; j < 4; j++) {
 
 		DISPLAY_CHANGE_TO_COMMAND_MODE;
-		spi_send_recv(0x22);
-		spi_send_recv(j);	// row 0, 1, 2, 3
-		spi_send_recv(0x0);
-		spi_send_recv(0x11);
+		spi_send_recv(0x21);
+		spi_send_recv(0);	// row 0, 1, 2, 3
+		spi_send_recv(127);
+
 		DISPLAY_CHANGE_TO_DATA_MODE;
 
 		for(int i;i = 0; i < 16; i++) {
@@ -35,14 +35,14 @@ void koordinate_update(void) {
 // Translate X Y to page and colum and set pixels
 void koordinate_set(int x, int y) {
 
-	gamebuffer[y/8][x] = gamebuffer[y/8][x] | (1 << y%8);
+	textbuffer[y/8][x] = textbuffer[y/8][x] | (1 << y%8);
 
 }
 
 // Translate X Y to page and colum and unset pixels
 void koordinat_clear(int x, int y) {
 
-	gamebuffer[y/8][x] = gamebuffer[y/8][x] & ~(1 << y%8);
+	textbuffer[y/8][x] = textbuffer[y/8][x] & ~(1 << y%8);
 
 }
 

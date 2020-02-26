@@ -6,7 +6,8 @@
 
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
-#include "Skapa.c"
+#include "Skapa.h"
+
 volatile int* _TRISE = (volatile int*)0xbf886100;
 volatile int* _PORTE = (volatile int*)0xbf886110;
 int timeoutcount;
