@@ -7,7 +7,7 @@ void gamebuffer_clear(void) {
 	for(int j; j = 0; j < 4; j++) {
 
 		for(int i; i = 0; i < 96; i++) {
-			playbuffer[j][i] = 0;
+			gamebuffer[j][i] = 0;
 
 		}
 
