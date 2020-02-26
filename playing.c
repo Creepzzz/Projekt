@@ -14,18 +14,18 @@ void textbuffer_clear(void) {
 	}
 
 }
-void koordinate_update(void) {
+void coordinate_update(void) {
 	for(int j; j = 0; j < 4; j++) {
 
 		DISPLAY_CHANGE_TO_COMMAND_MODE;
 		spi_send_recv(0x21);
-		spi_send_recv(0);	// row 0, 1, 2, 3
-		spi_send_recv(127);
+        spi_send_recv(0);
+        spi_send_recv(127);
 
 		DISPLAY_CHANGE_TO_DATA_MODE;
 
 		for(int i;i = 0; i < 16; i++) {
-			spi_send_recv(gamebuffer[j][i]);
+			spi_send_recv(textbuffer[j][i]);
 
 		}
 
@@ -33,14 +33,14 @@ void koordinate_update(void) {
 
 }
 // Translate X Y to page and colum and set pixels
-void koordinate_set(int x, int y) {
+void coordinate_set(int x, int y) {
 
 	textbuffer[y/8][x] = textbuffer[y/8][x] | (1 << y%8);
 
 }
 
 // Translate X Y to page and colum and unset pixels
-void koordinat_clear(int x, int y) {
+void coordinat_clear(int x, int y) {
 
 	textbuffer[y/8][x] = textbuffer[y/8][x] & ~(1 << y%8);
 
